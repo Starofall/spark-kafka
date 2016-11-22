@@ -16,10 +16,12 @@ Features:
 
 To use spark-kafka for local development:
 ```
-docker run --name sparfka -d -p 8080:8080 -p 8081:8081 -p 7077:7077 -p 9001:9001 -p 2181:2181 -p 9092:9092 starofall/spark-kafka-standalone
+docker run --name sparfka --hostname sparfka -d -p 8080:8080 -p 8081:8081 -p 7077:7077 -p 9001:9001 -p 2181:2181 -p 9092:9092 starofall/spark-kafka-standalone
 ```
+You also need to create an entry in your hosts file with -> 127.0.0.1 sparfka
+
 
 If you want to link it to another container just use:
 ```
-docker run --name sparfka -d starofall/spark-kafka-standalone
+docker run --name sparfka --hostname sparfka -d starofall/spark-kafka-standalone
 ```
